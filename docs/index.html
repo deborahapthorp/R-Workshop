@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="Intro_to_R_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Intro_to_R_files/libs/quarto-html/tabby.min.js"></script>
-<script src="Intro_to_R_files/libs/quarto-html/popper.min.js"></script>
-<script src="Intro_to_R_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="Intro_to_R_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Intro_to_R_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="Intro_to_R_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.335">
 
   <meta name="author" content="Deborah Apthorp">
@@ -14,8 +14,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="Intro_to_R_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="Intro_to_R_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -93,12 +93,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="Intro_to_R_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="logo.css">
-  <link href="Intro_to_R_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="Intro_to_R_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="Intro_to_R_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="Intro_to_R_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -656,7 +656,7 @@ Deborah Apthorp
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
-<p><img data-src="Intro_to_R_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="480"></p>
 </div>
 </div>
 </div>
@@ -672,7 +672,7 @@ Deborah Apthorp
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
-<p><img data-src="Intro_to_R_files/figure-revealjs/unnamed-chunk-4-1.png" width="480"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="480"></p>
 </div>
 </div>
 </div>
@@ -707,7 +707,7 @@ Deborah Apthorp
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
-<p><img data-src="Intro_to_R_files/figure-revealjs/unnamed-chunk-5-1.png" width="672"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="672"></p>
 </div>
 </div>
 </section>
@@ -718,7 +718,7 @@ Deborah Apthorp
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>histogram2 <span class="ot">&lt;-</span> <span class="fu">flexplot</span>(Gender <span class="sc">~</span> <span class="dv">1</span>, Data1) <span class="sc">+</span> <span class="fu">theme_classic</span>()</span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>histogram2 <span class="ot">&lt;-</span> <span class="fu">flexplot</span>(Age <span class="sc">~</span> <span class="dv">1</span>, Data1) <span class="sc">+</span> <span class="fu">theme_classic</span>()</span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="fu">plot</span>(histogram2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
@@ -726,7 +726,7 @@ Deborah Apthorp
 </section>
 <section id="visualising-data-flexplot-and-ggplot2-2-output" class="slide level2 output-location-slide"><h2>Visualising data: Flexplot and ggplot2</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
-<p><img data-src="Intro_to_R_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
 </div>
 </div></section><section id="visualising-data-flexplot-and-ggplot2-3" class="slide level2">
 <h2>Visualising data: Flexplot and ggplot2</h2>
@@ -742,7 +742,7 @@ Deborah Apthorp
 </section>
 <section id="visualising-data-flexplot-and-ggplot2-3-output" class="slide level2 output-location-slide"><h2>Visualising data: Flexplot and ggplot2</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
-<p><img data-src="Intro_to_R_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
 </div>
 </div></section><section id="visualising-data-flexplot-and-ggplot2-4" class="slide level2">
 <h2>Visualising data: Flexplot and ggplot2</h2>
@@ -799,7 +799,7 @@ sdq           0.38    -0.60  0.01</code></pre>
 </section>
 <section id="visualising-data-flexplot-and-ggplot2-5-output" class="slide level2 output-location-slide"><h2>Visualising data: Flexplot and ggplot2</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
-<p><img data-src="Intro_to_R_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
 </div>
 </div></section><section id="visualising-data-flexplot-and-ggplot2-6" class="slide level2">
 <h2>Visualising data: Flexplot and ggplot2</h2>
@@ -817,7 +817,7 @@ sdq           0.38    -0.60  0.01</code></pre>
 </section>
 <section id="visualising-data-flexplot-and-ggplot2-6-output" class="slide level2 output-location-slide"><h2>Visualising data: Flexplot and ggplot2</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
-<p><img data-src="Intro_to_R_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </div>
 </div></section><section id="simple-analyses---correlations" class="slide level2">
 <h2>Simple analyses - correlations</h2>
@@ -1129,19 +1129,19 @@ child_gender |      -0.13 | [-0.32,  0.07]</code></pre>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="Intro_to_R_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="Intro_to_R_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="Intro_to_R_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="Intro_to_R_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="Intro_to_R_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="Intro_to_R_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="Intro_to_R_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="Intro_to_R_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="Intro_to_R_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="Intro_to_R_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

@@ -234,8 +234,9 @@ mean( score, trim=.1 )
 
 ```{r include = TRUE, echo=TRUE}
 #| output-location: fragment
-#| #| fig-width: 5
+#| fig-width: 5
 #| fig-height: 5.5
+
 Data1=read.csv("Zhang et al. 2014 Study 3.csv", header=T)
 boxplot(Data1$T2_Extraordinariness)
 ```
@@ -253,6 +254,7 @@ boxplot(Data1$T2_Extraordinariness)
 #| output-location: fragment
 #| fig-width: 5
 #| fig-height: 5.5
+
 boxplot(Data1$T2_Memory)
 ```
 
@@ -298,7 +300,7 @@ plot(histogram1)
 ```{r echo = TRUE}
 #| output-location: slide
 
-histogram2 <- flexplot(Gender ~ 1, Data1) + theme_classic()
+histogram2 <- flexplot(Age ~ 1, Data1) + theme_classic()
 plot(histogram2)
 
 ```
