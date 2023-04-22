@@ -29,8 +29,6 @@ editor: source
 - It’s quite easy to do something wrong without knowing it
 - Can be frustrating trying to get things to work! 
 
-## Plot exmples
-
 
 ## Resources
 
@@ -165,7 +163,9 @@ mean( score, trim=.1 )
 ## Step 1 - create a new project 
 
 - File > New Project 
+
 ::: fragment
+
 ![](images/create_project.png)
 :::
 
