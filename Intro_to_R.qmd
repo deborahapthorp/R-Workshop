@@ -1,0 +1,525 @@
+---
+title: "Introduction to R For Psychology"
+author: "Deborah Apthorp"
+format: 
+  revealjs: 
+    theme: sky
+    incremental: true
+    preview-links: false
+    slide-number: true
+    logo: images/UNE_logo.png
+    css: logo.css
+    preload-iframes: true
+editor: source
+---
+
+## Why use R?
+
+- It’s free! 
+- All your analyses can be scripted - improved replicability
+- Beautiful and very flexible plotting
+- Lots of great packages available online for specialised analyses
+- A very marketable skill to have
+
+## Why not use R?
+
+- Just because it’s free ([JASP](https://jasp-stats.org/) and [jamovi](https://www.jamovi.org/) are very nice free point & click packages - jamovi is built on R)
+- Your supervisor probably won’t know it (unless it’s me) so won’t be able to help you
+- It’s open source, so packages can be buggy
+- It’s quite easy to do something wrong without knowing it
+- Can be frustrating trying to get things to work! 
+
+## Plot exmples
+
+
+## Resources
+
+- FREE book/course by Danielle Navarro (UNSW) - [Learn Statistics With R](https://learningstatisticswithr.com/)
+- [YARR! The Pirate’s Guide to R](https://ndphillips.github.io/piratesguide.html) (FREE)
+- [DataCamp: Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) (FREE)
+- For specific questions: try [StackExchange](https://stats.stackexchange.com/questions/tagged/r) and [StackOverflow](https://stackoverflow.com/questions/tagged/r) (also FREE but sometimes confusing or misleading unless you know what you’re doing)
+- Recently discovered: [Rminr](https://www.andywills.info/rminr/) by Andy Willis! Some terrific exercises for all levels
+
+## Resources (cont'd)
+
+- @RLadies on Twitter are awesome (they have a Slack too)
+- They have a course called [R You With me](https://rladiessydney.org/courses/ryouwithme/) - fantastic for beginners! (Alycia recommends)
+- [PsyTeachR](https://psyteachr.github.io/coursebooks/) from Glasgow Uni Psych has a whole set of courses free online, with resources (very inspiring to me)
+- When all else fails, Google your error message!  
+- Try the tutorials built into RStudio
+
+## Basics: Installing R 
+
+- Download from [https://cran.csiro.au/](ttps://cran.csiro.au/)
+- HIGHLY RECOMMENDED: Also download [R Studio](https://posit.co/downloads/) (free version is fine)
+- Install R first, then R Studio
+- Should be OK for Windows, Mac, Linux. No fancy command line needed for installing 
+
+## Importing data
+
+![](images/importing_data_1.png)
+
+## R will generate code you can use! 
+
+![](images/importing_data_2.png)
+
+
+## R will generate code you can use! 
+
+![](images/importing_data_3.png)
+
+## Installing packages
+
+::: columns
+::: {.column width="50%"}
+
+- Can do it via point & click in RStudio
+- However, better to use install.packages
+- Once they are installed, you also have to load them! 
+- `library()` - or can do via tick-box
+- Better to include in script
+:::
+
+::: {.column width="50%"}
+
+::: fragment
+
+![](images/installing_packages.png)
+:::
+:::
+
+:::
+
+## Some basic useful functions
+
+- Calculate means using `mean()`
+- Calculate medians using `median()`
+- Standard deviation: `sd()`
+- Range: `range()`
+- Interquartile range: `IQR()`
+- Specific quantiles: `quantile()`
+
+## What about missing data?
+
+- Sometimes there are missing data
+  - These are represented as NA values
+  - Different functions handle NA values differently
+- What is the mean of 3, 4, 5 and NA?
+- Pragmatic answer: ignore the missing data, and calculate the average of 3,4 and 5... i.e., mean = 4
+- Cautious answer: we don’t know the missing value, so we don’t know the mean either... i.e. mean = NA
+
+## What about missing data? 
+
+- By default, mean() gives the conservative “don’t know” answer
+
+::: fragment
+```{r mean demo, include = TRUE, echo = TRUE}
+#| output-location: fragment
+age <- c( 32, 19, NA, 64 )
+mean( age )
+
+```
+:::
+
+- But we can force it to be a pragmatist: tell R to remove the NA values by specifying `na.rm=TRUE`
+
+::: fragment
+
+```{r mean na.rm demo, include = TRUE, echo=TRUE}
+#| output-location: fragment
+age <- c( 32, 19, NA, 64 )
+mean( age, na.rm = TRUE )
+
+```
+
+:::
+
+- (the na.rm argument shows up in quite a lot of functions)
+
+
+## Calculating a trimmed mean
+
+- Sometimes the mean isn’t a compelling measure of central tendency, but we’d prefer not to resort to the median because the sample size is so small
+
+::: fragment
+```{r include = TRUE, echo=TRUE}
+#| output-location: fragment
+score <- c( 3, 2, 1, 5, 7,
+12, 3, 1, 4, 10000 )
+ mean( score )
+```
+:::
+
+- Using the `trim=.1` argument gives the 10% trimmed mean, a more robust measure of central tendency than the mean
+
+::: fragment
+```{r include = TRUE, echo=TRUE}
+#| output-location: fragment
+mean( score, trim=.1 )
+```
+:::
+
+
+# Exercise - load some data, do some basic statistics
+
+## Step 1 - create a new project 
+
+- File > New Project 
+::: fragment
+![](images/create_project.png)
+:::
+
+## Click "New Project"
+
+::: fragment 
+
+![](images/new_project.png)
+::: 
+
+## Type in a name that makes sense
+
+::: fragment 
+
+![](images/name_project.png)
+
+:::
+
+## Now let's make an R script! 
+
+- File > New file > R script 
+
+::: fragment 
+
+![](images/r_script.png)
+
+:::
+
+## Installing and loading packages
+
+- The command for installing packages is `install.packages()`
+- Let’s try `install.packages("psych")` 
+- This is a very useful package for psychology data! 
+- **Never include this line in your script though!** 
+- To call a package for use, you can type `library(psych)` or `require(psych)` into your script. 
+
+## Loading data
+
+- Let’s load some data! 
+- If you look in the “files” tab, and you’ve downloaded the data to the right place, you should be able to click on the file and R will prompt you to import it. 
+- Or you can type this: 
+- `Data1=read.csv("Zhang et al. 2014 Study 3.csv", header=T)`
+- That should work if the file is in your project folder. 
+- Now you can view it: `view(Data1)`
+
+## Exploring data
+
+- Now let's generate descriptive statistics using the `psych` package
+- `describe()` reports basic summary statistics (mean, sd, median, max, range, minimum, maximum, skew, kurtosis, standard error)
+- Type this into your script
+- `describe(Data1)`
+- You can see why its a useful command!
+
+## Visualising data (base R)
+
+- Now lets do some data visualisation using base R (i.e. we're not using a package here)
+- First let's look at histograms of some variables
+- `hist(Data1$Age)`
+- `hist(Data1$Gender)`
+
+## Visualising data (base R)
+
+- What about boxplots? 
+
+::: fragment
+
+```{r include = TRUE, echo=TRUE}
+#| output-location: fragment
+#| #| fig-width: 5
+#| fig-height: 5.5
+Data1=read.csv("Zhang et al. 2014 Study 3.csv", header=T)
+boxplot(Data1$T2_Extraordinariness)
+```
+
+:::
+
+
+## Visualising data (base R)
+
+- Let's try memory! 
+
+::: fragment
+
+```{r include = TRUE, echo=TRUE}
+#| output-location: fragment
+#| fig-width: 5
+#| fig-height: 5.5
+boxplot(Data1$T2_Memory)
+```
+
+:::
+
+## Visualising data: Flexplot and ggplot2
+
+
+- You can see how sometimes the formatting is nice, sometimes not.
+- So people have made packages to get nice formatting
+- One of my favourites for beginner data visualisation is `flexplot`
+- `flexplot` creates 'objects' which are then editable using `ggplot2`
+
+## Installing flexplot is kind of a pain though
+
+- `install.packages("devtools")`
+- ` install.packages("jmvcore")`
+- `devtools::install_github("dustinfife/flexplot")`
+- `install.packages("ggplot2")`
+- `library(flexplot)`
+- `library(ggplot2)`
+
+
+## Visualising data: Flexplot and ggplot2
+
+```{r include = TRUE, echo=TRUE}
+#| output-location: fragment
+#| fig-width: 7
+#| fig-height: 4
+library(flexplot)
+library(ggplot2)
+histogram1 <- flexplot(Age ~ 1, Data1)
+plot(histogram1)
+
+```
+
+## Visualising data: Flexplot and ggplot2
+
+- In flexplot, you can alter the look of the plots so that they are APA style!
+
+::: fragment
+
+```{r echo = TRUE}
+#| output-location: slide
+
+histogram2 <- flexplot(Gender ~ 1, Data1) + theme_classic()
+plot(histogram2)
+
+```
+
+:::
+
+## Visualising data: Flexplot and ggplot2
+
+- Try this:
+
+::: fragment
+```{r echo = TRUE}
+#| output-location: slide
+histogram1 + theme_classic() 
+```
+:::
+
+## Visualising data: Flexplot and ggplot2
+
+- What about a scatterplot?
+- For this we need to write a little bit of code describing a regression model
+- Let's use a different dataset that contains more continuous variables!
+
+::: fragment
+```{r echo = TRUE}
+#| output-location: slide
+library(psych)
+Data2 <- read.csv("Coldwell et al Data_2006.csv", header=T)
+describe(Data2)
+```
+:::
+
+## Visualising data: Flexplot and ggplot2
+
+::: fragment
+
+```{r echo = TRUE, include = TRUE}
+#| output-location: slide
+scatter <- flexplot(mum_pos ~ mum_neg, Data2, method = "lm") 
+plot(scatter)
+
+
+```
+ 
+ - we need to give is a bit of a regression description: `mum_pos ~ mum_neg`
+ - flexplot defaults to a loess line, so method=lm forces a regression line
+ 
+:::
+
+## Visualising data: Flexplot and ggplot2
+
+- Let's add some nicer labels
+- We are using `ggplot2` syntax to add these now
+
+::: fragment
+
+```{r echo = TRUE, include = TRUE}
+#| output-location: slide
+
+
+scatter + theme_classic() +
+  labs(x="Mother's Negativity", y="Mother's Positivity")
+
+```
+
+:::
+
+
+## Simple analyses - correlations
+
+- This is how to do correlations using the `psych` package!
+
+::: fragment
+
+```{r echo = TRUE, include = TRUE}
+#| output-location: slide
+
+correlations <- corr.test(Data2)
+print(correlations) 
+
+```
+
+:::
+
+## Simple analyses - correlations
+
+- Here is another way to generate a correlation matrix, this time just the lower diagonal
+
+::: fragment
+
+```{r echo = TRUE, include = TRUE}
+#| output-location: fragment
+
+lowerCor(Data2, digits=2)
+
+```
+
+:::
+
+## Using `apaTables` to save your tables! 
+
+- `install.packages("apaTables")`
+- `library(apaTables)`
+- `apa.cor.table(Data2, filename="Table1_APA.doc")`
+- Neat!!
+
+# Subset your data! 
+
+- What if I'm only using a subset of a larger number of items and I wantto make a correlation matrix of this subset?
+- I need the `tidyverse` package to make the pipe %>% work!
+- `install.packages("tidyverse")`
+
+::: fragment
+
+```{r echo = TRUE, include = TRUE}
+#| output-location: slide
+
+library(tidyverse)
+
+Data_Sub <- Data2 %>% select(child_age, mum_pos, mum_neg, chaos)
+lowerCor(Data_Sub, digits=2)
+```
+::: 
+
+## Save the table {.smaller}
+
+- `apa.cor.table(Data_Sub, filename="Table2_APA.doc")`
+
+::: fragment 
+![](images/table2.png)
+:::
+
+## Regression analysis - simple
+
+- So we see a slight negative correlation between mum_pos and mum_neg
+- But how do we do the regression analysis in R?
+- Does mother's level of negativity significantly predict their level of positivity?
+
+::: fragment 
+
+```{r include=TRUE, echo=TRUE}
+#| output-location: slide
+
+Model1 <- lm(mum_pos ~ mum_neg, Data2)
+summary(Model1)
+
+```
+
+- `lm` just stands for linear model! 
+:::
+
+## Regression analysis - multiple
+
+- What if our research question required a multiple regression?
+
+::: fragment
+
+```{r include=TRUE, echo=TRUE}
+#| output-location: fragment
+
+Model2 <- lm(child_warmth ~ mum_neg + child_anger + child_gender, Data2)
+summary(Model2)
+
+```
+
+:::
+
+## Effect sizes
+
+- What if we wanted to report standardised regression coefficients?
+- Using the `effectsize` package, use the `standardize_parameters` command and apply it to the `Model2` object
+- `install.packages("effectsize")`
+
+::: fragment
+
+```{r include=TRUE, echo=TRUE}
+#| output-location: slide
+
+library(effectsize)
+standardize_parameters(Model2, type = "std", ci.lvl = 0.95)
+
+```
+
+::: 
+
+## Useful packages and functions {.smaller}
+
+- `afex` - useful for factorial ANOVAs
+- `lmer` - least squares regression
+- `car` - great for correlations, can make nice scatter plot matrices 
+- `apaTables` - very useful, creates APA-style correlation and regression tables in Word
+- `psych` - lots of useful functions for Psych
+- `pirateplot` - one of my personal faves. Makes informative descriptive plots with individual data points, distributions, etc. Part of the package “`yarrr`” 
+- `ggplot2` -  I’ve been learning to love this recently!
+- `raincloudplots` - another recent personal fave
+
+## How to find help
+
+- Just type `help()` into the console (with whatever you want help on inside the brackets)
+- Google it! (This is often the best way!)
+- [Quick-R](https://www.statmethods.net/index.html) is a really useful site
+- Hashtag #rstats on Twitter
+- As mentioned earlier, try [StackExchange](https://stats.stackexchange.com/questions/tagged/r) and [StackOverflow](https://stackoverflow.com/questions/tagged/r) (better for more advanced users)
+
+## Using R Markdown
+
+- R Markdown is a great tool for formatting all your analyses, plots, tables and text into one document
+- It can output as HTML, PDF or Word
+- R Studio provides templates
+- For the super keen, there’s even  a package ([papaja](https://github.com/crsh/papaja)) to generate complete APA manuscripts from R Markdown files! 
+
+## Using R Markdown
+
+![](images/rmarkdown1.png)
+
+## Using R Markdown
+
+![](images/rmarkdown2.png)
+
+## Using R Markdown
+
+![](images/rmarkdown3.png)
+
+# Questions? 
