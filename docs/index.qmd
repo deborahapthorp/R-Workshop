@@ -40,7 +40,7 @@ editor: source
 
 ## Resources (cont'd)
 
-- @RLadies on Twitter are awesome (they have a Slack too)
+- [RLadies Global](https://rladies.org/) are awesome (they have a Slack too)
 - They have a course called [R You With me](https://rladiessydney.org/courses/ryouwithme/) - fantastic for beginners! (Alycia recommends)
 - [PsyTeachR](https://psyteachr.github.io/coursebooks/) from Glasgow Uni Psych has a whole set of courses free online, with resources (very inspiring to me)
 - When all else fails, Google your error message!  
@@ -271,7 +271,6 @@ boxplot(Data1$T2_Memory)
 ## Installing flexplot is kind of a pain though
 
 - `install.packages("devtools")`
-- ` install.packages("jmvcore")`
 - `devtools::install_github("dustinfife/flexplot")`
 - `install.packages("ggplot2")`
 - `library(flexplot)`
@@ -345,8 +344,8 @@ plot(scatter)
 
 ```
  
- - we need to give is a bit of a regression description: `mum_pos ~ mum_neg`
- - flexplot defaults to a loess line, so method=lm forces a regression line
+ - we need to give it a bit of a regression description: `mum_pos ~ mum_neg`
+ - flexplot defaults to a loess line, so `method=lm` forces a regression line
  
 :::
 
