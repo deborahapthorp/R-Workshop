@@ -50,7 +50,7 @@ editor: source
 
 - [RLadies Global](https://rladies.org/) are awesome (they have a Slack too)
 - They have a course called [R You With me](https://rladiessydney.org/courses/ryouwithme/) - fantastic for beginners! (Alycia recommends)
-- [PsyTeachR](https://psyteachr.github.io/coursebooks/) from Glasgow Uni Psych has a whole set of courses free online, with resources (very inspiring to me)
+- [PsyTeachR](https://psyteachr.github.io/) from Glasgow Uni Psych has a whole set of courses free online, with resources (very inspiring to me)
 - When all else fails, Google your error message!  
 - Try the tutorials built into RStudio
 
