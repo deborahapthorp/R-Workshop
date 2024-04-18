@@ -13,6 +13,14 @@ format:
 editor: source
 ---
 
+## Slides are open access
+
+- As usual, these slides are all available online on Github Pages
+
+- See [deborahapthorp.github.io/R-Workshop/](https://deborahapthorp.github.io/R-Workshop/)
+
+- Credit to Sally Larsen for providing some of the code and materials!
+
 ## Why use R?
 
 - It’s free! 
