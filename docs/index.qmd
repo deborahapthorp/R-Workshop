@@ -344,8 +344,8 @@ plot(scatter)
 
 ```
  
- - we need to give is a bit of a regression description: `mum_pos ~ mum_neg`
- - flexplot defaults to a loess line, so method=lm forces a regression line
+ - we need to give it a bit of a regression description: `mum_pos ~ mum_neg`
+ - flexplot defaults to a loess line, so `method=lm` forces a regression line
  
 :::
 
