@@ -13,6 +13,14 @@ format:
 editor: source
 ---
 
+## Slides are open access
+
+- As usual, these slides are all available online on Github Pages
+
+- See [deborahapthorp.github.io/R-Workshop/](https://deborahapthorp.github.io/R-Workshop/)
+
+- Credit to Sally Larsen for providing some of the code and materials!
+
 ## Why use R?
 
 - It’s free! 
@@ -42,7 +50,7 @@ editor: source
 
 - [RLadies Global](https://rladies.org/) are awesome (they have a Slack too)
 - They have a course called [R You With me](https://rladiessydney.org/courses/ryouwithme/) - fantastic for beginners! (Alycia recommends)
-- [PsyTeachR](https://psyteachr.github.io/coursebooks/) from Glasgow Uni Psych has a whole set of courses free online, with resources (very inspiring to me)
+- [PsyTeachR](https://psyteachr.github.io/) from Glasgow Uni Psych has a whole set of courses free online, with resources (very inspiring to me)
 - When all else fails, Google your error message!  
 - Try the tutorials built into RStudio
 
@@ -408,7 +416,7 @@ lowerCor(Data2, digits=2)
 
 # Subset your data! 
 
-- What if I'm only using a subset of a larger number of items and I wantto make a correlation matrix of this subset?
+- What if I'm only using a subset of a larger number of items and I want to make a correlation matrix of this subset?
 - I need the `tidyverse` package to make the pipe %>% work!
 - `install.packages("tidyverse")`
 
@@ -501,7 +509,7 @@ standardize_parameters(Model2, type = "std", ci.lvl = 0.95)
 - Just type `help()` into the console (with whatever you want help on inside the brackets)
 - Google it! (This is often the best way!)
 - [Quick-R](https://www.statmethods.net/index.html) is a really useful site
-- Hashtag #rstats on Twitter
+- Hashtag #rstats on Mastodon (my Twitter replacement)
 - As mentioned earlier, try [StackExchange](https://stats.stackexchange.com/questions/tagged/r) and [StackOverflow](https://stackoverflow.com/questions/tagged/r) (better for more advanced users)
 
 ## Using R Markdown
