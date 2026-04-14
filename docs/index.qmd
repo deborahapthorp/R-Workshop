@@ -56,7 +56,7 @@ editor: source
 
 ## Basics: Installing R 
 
-- Download from [https://cran.csiro.au/](ttps://cran.csiro.au/)
+- Download from [https://cran.csiro.au/](https://cran.csiro.au/)
 - HIGHLY RECOMMENDED: Also download [R Studio](https://posit.co/downloads/) (free version is fine)
 - Install R first, then R Studio
 - Should be OK for Windows, Mac, Linux. No fancy command line needed for installing 
@@ -148,7 +148,7 @@ mean( age, na.rm = TRUE )
 - Sometimes the mean isn’t a compelling measure of central tendency, but we’d prefer not to resort to the median because the sample size is so small
 
 ::: fragment
-```{r include = TRUE, echo=TRUE}
+```{r trim mean demo, include = TRUE, echo=TRUE}
 #| output-location: fragment
 score <- c( 3, 2, 1, 5, 7,
 12, 3, 1, 4, 10000 )
@@ -287,7 +287,7 @@ boxplot(Data1$T2_Memory)
 
 ## Visualising data: Flexplot and ggplot2
 
-```{r include = TRUE, echo=TRUE}
+```{r flexplot histogram, include = TRUE, echo=TRUE}
 #| output-location: fragment
 #| fig-width: 7
 #| fig-height: 4
