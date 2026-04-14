@@ -41,7 +41,7 @@ editor: source
 ## Resources
 
 - FREE book/course by Danielle Navarro (UNSW) - [Learn Statistics With R](https://learningstatisticswithr.com/)
-- [YARR! The Pirate’s Guide to R](https://ndphillips.github.io/piratesguide.html) (FREE)
+- [YARR! The Pirate’s Guide to R](https://nathanieldphillips-yarrr.share.connect.posit.cloud/) (FREE)
 - [DataCamp: Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) (FREE)
 - For specific questions: try [StackExchange](https://stats.stackexchange.com/questions/tagged/r) and [StackOverflow](https://stackoverflow.com/questions/tagged/r) (also FREE but sometimes confusing or misleading unless you know what you’re doing)
 - Recently discovered: [Rminr](https://www.andywills.info/rminr/) by Andy Willis! Some terrific exercises for all levels
